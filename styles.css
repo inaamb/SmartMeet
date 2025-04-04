@@ -9,6 +9,7 @@ header {
     background-color:blue;
     color:white;
     width:100px;
+    justify-content:space-around;
 }
 
 
@@ -31,6 +32,18 @@ header {
     gap: 15px;
     padding: 0;
     margin-top: 10px;
+}
+nav ul li{
+
+    list-style:none;
+    display:inline-block;
+    
+}
+nav ul li a{
+    text-decoration:none;
+    color:#fff;
+    padding:0 15px;
+    
 }
 #imp {
     margin: 0;
