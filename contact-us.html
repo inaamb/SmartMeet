@@ -1,0 +1,81 @@
+<html>
+<head>
+    <title>Contact Us</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2TNJtJokfP4DfZuwVhlHCMHjCVuxG2KY&callback=myMap" async defer></script>
+</head>
+<body>
+    <header>
+        <img src="SMART MEET.png" alt="SmartMeet Logo" style="width:100px; height:auto; float: left;">
+            <ul style="display: flex; 
+             text-align: right; 
+            text-indent: 10px;
+            list-style-type: none; 
+            font-family: 'Courier New', Courier, monospace;
+             font-size: 20px; 
+            font-weight: bold; 
+            font-style: italic; letter-spacing: 1px;
+            margin-left: 3cm; margin-right: 3cm; padding-left: 3pt;">
+
+                <li><a href="index.html">Home Page</a></li>
+                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="room-booking.html">Book Room</a></li>
+                <li><a href="book-shop.html"> Book Shop</a> </li>
+                <li><a href="collaboration.html"> collaboration</a> </li>
+                <li><a href="Questionnre.html"> Questionnre</a> </li>
+                <li><a href="tips.html"> Tips</a> </li>
+                <li><a href="contact-us.html"> Cotact Us</a></li>
+            </ul>
+            <h1  style=" text-align: center;"> Contact us</h1>
+  </header>
+    
+    <h2>Contact Us Form</h2>
+    <div>
+        <form action="https://httpbin.org/get" method="POST">
+            <label>Full Name:</label><br>
+            <input type="text" id="fullname" name="fullname" required><br><br>
+    
+            <label>Phone Number:</label><br>
+            <input type="tel" id="phone" maxlength="8" name="phone" required><br><br>
+    
+            <label>Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+    
+            <label>How can we help you?</label><br>
+            <textarea id="help" name="help" rows="4" cols="50" required></textarea><br><br>
+    
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <hr>
+    <div style="text-align: center; background-color:rgb(192, 234, 240);">
+        <h2>fill in our customer feedback form to improve our services!</h2>
+        <a href="Questionnre.html">
+            <button>Feedback form</button>
+        </a>
+        <br>
+    </div>
+    <hr>
+    <div style="text-align: center; background-color: powderblue;">
+        <h2>Contact Information</h2>
+        <p><strong>📞 Phone:</strong> 8765321</p>
+        <p><strong>📧 Email:</strong> SmartMeet@gmail.com</p>
+        <p><strong>📍 Location:</strong> Sultan Qaboos University</p>
+    </div>
+    <div id="googleMap" style="width:100%;height:400px;"></div>
+
+    <script>
+        function myMap() {
+            var mapProp = {
+                center: new google.maps.LatLng(23.592058, 58.168346), 
+                zoom: 15,
+            };
+            var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+        }
+    </script>
+    <h2 style="text-align: center;">Feel free to reach out for inquiries. We’re here to help!</h2>
+
+    <footer>
+        <p>&copy; 2025 SmartMeet | All Rights Reserved</p>
+    </footer>
+</body>
+</html>

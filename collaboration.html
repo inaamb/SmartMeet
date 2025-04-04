@@ -1,0 +1,141 @@
+<html>
+    <head>
+        <title>collaboraiton</title>
+        <style>
+            table {text-align: center;}
+            div {background-color: powderblue;}
+            
+        </style>
+    </head>
+    <body>
+        <header>
+        <img src="SMART MEET.png" alt="SmartMeet Logo" style="width:100px; height:auto; float: left;">
+        <ul style="display: flex; 
+         text-align: center; 
+        text-indent: 10px;
+        list-style-type: none; 
+        font-family: 'Courier New', Courier, monospace;
+         font-size: 25px; 
+        font-weight: bold; 
+        font-style: italic; letter-spacing: 1px;
+        margin-left: 3cm; margin-right: 3cm; padding-left: 3pt;">
+
+            <li><a href="index.html">Home Page</a></li>
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="room-booking.html">Book Room</a></li>
+            <li><a href="book-shop.html"> Book Shop</a> </li>
+            <li><a href="collaboration.html"> collaboration</a> </li>
+            <li><a href="Questionnre.html"> Questionnre</a> </li>
+            <li><a href="tips.html"> Tips</a> </li>
+            <li><a href="contact-us.html"> Cotact Us</a></li>
+        </ul>
+        <h1 style="text-align: center;">Wish to Collaborate with us?</h1>
+        </header>
+        <div> 
+        <h3 style="text-align: center;">Become part of our expanding community of instructors and trainers! 
+          Our center offers a professional setting where you can showcase your expertise, 
+            lead workshops, and connect with enthusiastic learners. Whether you are an educator, 
+            specialist, or business mentor, we provide the ideal space for your sessions, tailored to your requirements.</h3>
+           
+            <h3>benefits of Collaborating with center :</h3>
+            <ol>
+                <li><strong>Access to Facilities:</strong> State-of-the-art rooms equipped with projectors, Wi-Fi, and whiteboards.</li>
+                <li><strong>Flexible Scheduling:</strong> Book teaching spaces at convenient times.</li>
+                <li><strong>Marketing Support:</strong> Promotion of courses to the center’s audience.</li>
+                <li><strong>Services:</strong> Optional meal arrangements for workshops.</li>
+                <li><strong>Networking:</strong>Opportunities to connect with students, professionals, and other instructors.</li>
+            </ol>
+        </div>
+            <h1>Pricing</h1>
+            <table border="5">
+                <tr style="background-color: rgb(165, 169, 173);">
+                    <th rowspan="2"> Room type </th>
+                    <th rowspan="2"> Room size</th>
+                    <th colspan="2"> Price </th>
+                </tr>
+                <tr style="background-color: rgb(165, 169, 173);">
+                    <th> per hour </th>
+                    <th> per day </th>
+                </tr>
+                <tr style="background-color: rgb(249, 212, 218);">
+                    <td rowspan="3">Meeting room</td>
+                    <td>small</td>
+                    <td>10 OMR</td>
+                    <td>100 OMR</td>
+                </tr>
+                <tr style="background-color: rgb(249, 212, 218);">
+                    <td>medium</td>
+                    <td>35 OMR</td>
+                    <td>150 OMR</td>
+                </tr>
+                <tr style="background-color: rgb(249, 212, 218);">
+                    <td>large</td>
+                    <td>60 OMR</td>
+                    <td>250 OMR</td>
+                </tr>
+                <tr style="background-color: rgb(211, 235, 249);">
+                    <td>Podcast studio</td>
+                    <td> medium </td>
+                    <td>25 OMR</td>
+                    <td>200 OMR</td>
+                </tr>
+                <tr style="background-color: lightyellow;">
+                <td>Cinema</td>
+                <td>large</td>
+                <td>40 OMR</td>
+                <td>350 OMR</td>
+                </tr>
+            </table>
+            <h1>Registeration form</h1>
+            <form action="https://httpbin.org/get" method="POST">
+                <label>Full Name:</label><br>
+                <input type="text"  name="fullname" required><br><br>
+        
+                <label>Phone Number:</label><br>
+                <input type="tel" maxlength="8" name="phone" required><br><br>
+        
+                <label>Email:</label><br>
+                <input type="email"  name="email" required><br><br>
+        
+                <label>Organization/Company Name (if applicable)</label><br>
+                <input type="text" name="compname" rows="4" cols="50"></input><br><br>
+
+                <label>Please Provide a brief description about the course,  Target Audience,  Duration.</label><br>
+                <textarea name="desc" rows="6" cols="50" required></textarea><br><br>
+        
+                <label>Required room:</label><br>
+                <input type="radio" name="reqroom" value="Meeting"> Meeting room
+                <input type="radio" name="reqroom" value="podcast"> Podcast studio
+                <input type="radio" name="reqroom" value="cinema"> cinema 
+                <br><br>
+
+                <label>approx. Max number of people ? (to determine room size)</label><br>
+                <input type="radio" name="maxpeople" value="20"> 20
+                <input type="radio" name="maxpeople" value="50" checked="checked"> 50
+                <input type="radio" name="maxpeople" value="100"> 100
+                <input type="radio" name="maxpeople" value="150"> 150
+                <input type="radio" name="maxpeople" value="200"> 200
+                <input type="radio" name="maxpeople" value="250"> 250
+                <input type="radio" name="maxpeople" value="300"> 300
+                <br><br>
+           
+                <label> Preferred Date :</label><br>
+                <input type="date" name="date"> 
+                <br><br>
+
+                <label> is Catering required ?</label>
+                <select name="catering" size="1">
+                    <option> Yes </option>
+                    <option> No </option>
+                </select>
+                <br>
+                <p style="background-color: rgb(246, 188, 188);">Once the form is submitted, the center will review the application and contact you with the next steps.</p>
+                <input type="submit" value="Submit">
+                <input type="reset" value="reset form">
+            </form>
+
+            <footer>
+                <p>&copy; 2025 SmartMeet | All Rights Reserved</p>
+            </footer>    
+    </body>
+</html>
