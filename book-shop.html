@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <title>Book Shop by smart meet</title>
+    <link rel="stylesheet" type="text/css" href="project pt2.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+
+.bookshop {
+    text-align: center;
+    padding: 40px;
+}
+
+.book-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.book {
+    width: 250px;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+.book:hover {
+    transform: translateY(-5px);
+}
+
+.book img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.book h3 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.book p {
+    font-size: 16px;
+    color: #555;
+}
+
+.buy-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #ffcc00;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.buy-btn:hover {
+    background-color: #ffaa00;
+}
+</style>
+
+
+
+
+
+
+</head>
+
+
+<header>
+    <img src="logo.jpeg" alt="Logo" class="logo">
+
+
+    <nav>
+      <ul >
+                    <li><a href="index.html">Home Page</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="room-booking.html">Room Booking</a></li>
+                    <li><a href="book-shop.html"> Book Shop</a> </li>
+                    <li><a href="collaboration.html"> Collaboration</a> </li>
+                    <li><a href="questionnaire.html"> Questionnaire</a> </li>
+                    <li><a href="tips.html"> Tips</a> </li>
+                    <li><a href="contact-us.html"> Contact Us</a></li>
+
+        </ul>
+        </nav>
+   
+      </header>
+
+    <section class="bookshop">
+        <h1>book shop📚 </h1>
+        <form method="POST" action="checkout.html">
+        <div class="book-container">
+            <div class="book">
+                <img src="book1.jpg" >
+                <h3>Python Crash Course</h3>
+                <p>Price: 15 OMR</p>
+                <label>Quantity: 
+                    <input type="number" name="book1" min="0" max="10" value="0">
+                </label>
+    
+            </div>
+
+            <div class="book">
+                <img src="book2.jpg" >
+                <h3>History of the World Map by Map</h3>
+                <p>Price: 13 OMR</p>
+                <label>Quantity: 
+                    <input type="number" name="book2" min="0" max="10" value="0">
+                </label>
+            </div>
+
+            <div class="book">
+                <img src="book3.jpg" >
+                <h3>Coding Essentials Guidebook for Developers</h3>
+                <p>Price: 16 OMR</p>
+                <label>Quantity: 
+                    <input type="number" name="book3" min="0" max="10" value="0">
+                </label>
+            </div>
+            <div class="book">
+                <img src="book4.jpg" >
+                <h3>The Knowledge Gap</h3>
+                <p>Price: 11 OMR</p>
+                <label>Quantity: 
+                    <input type="number" name="book4" min="0" max="10" value="0">
+                </label>
+            </div>
+            <div class="book">
+                <img src="book5.jpg" >
+                <h3>Beyond the Science of Reading</h3>
+                <p>Price: 35 OMR</p>
+                <label>Quantity: 
+                    <input type="number" name="book5" min="0" max="10" value="0">
+                </label>
+            </div>
+            <div class="book">
+                <img src="book6.jpg" >
+                <h3>Harnessing the Science of Learning</h3>
+                <p>Price: 26 OMR</p>
+                <label>Quantity: 
+                    <input type="number" name="book6" min="0" max="10" value="0">
+                </label>
+            </div>
+            <div class="book">
+                <img src="book7.jpg" >
+                <h3>Uncommon Sense Teaching</h3>
+                <p>Price: 20 OMR</p>
+                <label>Quantity: 
+                    <input type="number" name="book7" min="0" max="10" value="0">
+                </label>
+            </div>
+            <div class="book">
+                <img src="book8.jpg" >
+                <h3> Infinite Education</h3>
+                <p>Price: 18 OMR</p>
+                <label>Quantity: 
+                    <input type="number" name="book8" min="0" max="10" value="0">
+                </label>
+            </div>
+            <div class="book">
+                <img src="book9.jpg" >
+                <h3> The AI Classroom</h3>
+                <p>Price: 40 OMR</p>
+                <label>Quantity: 
+                    <input type="number" name="book9" min="0" max="10" value="0">
+                </label>
+            </div>
+            <div class="book">
+                <img src="book10.jpg" >
+                <h3> AI for Educators</h3>
+                <p>Price: 22 OMR</p>
+                <label>Quantity: 
+                    <input type="number" name="book10" min="0" max="10" value="0">
+                </label>
+            </div>
+
+            
+        </div>
+     <br>
+    <button type="button"  ><a href="checkout.html" > Checkout</a></button>
+</form>
+<footer>
+    <div class="footerContainer">
+        <div class="socialIcons">
+            <a href="https://www.instagram.com/youthcenter_om/?theme=dark"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://x.com/youthcenter_om?lang=en"><i class="fa-brands fa-twitter"></i></a>
+        </div>
+        <div class="footerNav">
+            <ul><li><a href="index.html">Home</a></li>
+                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="contact-us.html">Contact Us</a></li>
+                
+            </ul>
+        </div>
+        
+    </div>
+    <div class="footerBottom">
+        <p>You can reach us at: <a href="mailto:SmartMeet@gmail.com">SmartMeet@gmail.com</a></p>
+    </br>
+        <p>&copy; 2025 SmartMeet. All Rights Reserved. </p>
+        
+    </div>
+
+</footer>
+
+
+</body>
+</html>
