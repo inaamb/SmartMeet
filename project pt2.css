@@ -35,7 +35,7 @@ ul {
 header {
     display: flex; 
     align-items: center;
-    padding: 20px;
+    padding: 15px;
     justify-content: space-between;
     background-color: rgb(183, 222, 229);
     
@@ -81,7 +81,7 @@ footer{
 }
 .footerContainer{
     width: 100%;
-    padding: 70px 30px 20px ;
+    padding: 10px 0px;
 }
 .socialIcons{
     display: flex;
@@ -109,7 +109,7 @@ footer{
     transition: 0.5s;
 }
 .footerNav{
-    margin: 30px 0;
+    margin: 10px 0;
 }
 .footerNav ul{
     display: flex;
@@ -138,3 +138,4 @@ footer{
     font-size: large;
     font-family: 'Merriweather','Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
 }
+
