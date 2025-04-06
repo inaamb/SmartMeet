@@ -1,0 +1,24 @@
+
+
+h1{
+    text-align: center;
+}
+
+ul {
+    list-style-type: square;
+}
+
+.rooms td{
+    font-weight: bold;
+    text-align: center;
+    /*border: 2px solid black;*/
+      
+}
+
+.rooms img {
+    display: block;
+    width: 50%;
+    height: 200px;
+    padding: 50px;
+    margin: 0 auto 10px;
+}
