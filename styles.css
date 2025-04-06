@@ -16,41 +16,12 @@ header {
     margin-right: 20px;
 } 
 
-.nav {
-    display: flex;
-    justify-content: center;
-    list-style-type: none;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 25px;
-    font-weight: bold;
-    font-style: italic;
-    letter-spacing: 1px;
-    gap: 15px;
-    padding: 0;
-    margin-top: 10px;
-  
-}
-nav ul li{
 
-    list-style:none;
-    display:inline-block;
-  
-    
-}
-nav ul li a{
-    text-decoration:none;
-    color:#fefeff;
-    padding:0 15px;
-    
-}
-#imp {
-    margin: 0;
-    
-}
+
 h1{ text-align: center; color: rgb(225, 225, 225);
      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-weight: bolder;}
 
-     .f{ border-image: round;
+.f{ border-image: round;
         width:150px; height:auto; float:center;
     font-family: Arial, Helvetica, sans-serif;
 background-color: rgb(77, 231, 231); color:rgb(46, 53, 156) ;}
@@ -109,67 +80,4 @@ background-color: rgb(77, 231, 231); color:rgb(46, 53, 156) ;}
 
 .buy-btn:hover {
     background-color: #ffaa00;
-}
-
-.footerContainer{
-    width:100%;
-    padding:70px 30px 20px;
-}
-.socialIcons{
-    display:flex;
-justify-content: center;
-
-}
-.socialIcons a {
-    text-decoration:none;
-    padding:10px;
-    margin:10px;
-    background-color:white;
-    border-radius:50%;
-    
-}
-.socialIcons a i{
-    font-size:2em;
-    color:black;
-    opacity:0.9;
-
-}
-.socialIcons a:hover{
-    background-color:#111
-   
-    
-}
-.socialIcons a:hover i{
-    color:white;
-    transition:0.5s;
-    
-}
-.footerNav{
-    margin:30px 0 ;
-}
-.footerNav ul { display:flex;
-               justify-content:center;
- } 
-.footerNav ul li{
-    color:rgb(11, 10, 10);
-    margin:20px;
-    text-decoration:none;
-    font-size:1.3em;
-    opacity:0.7;
-     transition:0.5s;
-    
-}
-.footerNav ul li a:hover{
-    opacity:1;
-
-}
-.footerBottom{
-    background-color:black;
-    padding:20px;
-    text-align:center;
-
-    
-}
-.footerBottom p{
-    color:white;
 }
