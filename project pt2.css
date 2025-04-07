@@ -1,15 +1,24 @@
+*{font-family: 'Times New Roman', Times, serif;}
 body {
-    font-family: 'Times New Roman', Times, serif;
-    text-align: center;
-    background-color: white;
-}
-
-h1{
     text-align: center;
     background-color: aliceblue;
+}
+h1{
+    text-align: center;
+    background-color:#004AAD;
+    color: white;
     width: 100%;
     padding: 20px 0;
 }
+header h1 {
+    background-color: aliceblue; 
+    font-size: 45px;
+}
+h2 { 
+    background-color: #6baed8;
+    padding: 15px 0;
+}
+h4 {padding: 20px 0;}
 
 ul {
     list-style-type: square;
@@ -30,7 +39,9 @@ ul {
     margin: 0 auto 10px;
 }
 
-
+table h2 {
+    background-color: aliceblue;
+}
 /*all for the header section of the pages*/
 header {
     display: flex; 
@@ -140,4 +151,3 @@ footer{
     font-size: large;
     font-family: 'Merriweather','Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
 }
-
