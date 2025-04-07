@@ -2,29 +2,30 @@
 <head>
     <title>Contact Us</title>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2TNJtJokfP4DfZuwVhlHCMHjCVuxG2KY&callback=myMap" async defer></script>
-    <link href="styling.css" rel="stylesheet"> 
+    <link href="project pt2.css" rel="stylesheet"> 
 </head>
 <body>
     <header>
-        <img src="logo.jpeg" alt="Logo" class="logo">
+        <img src="SMART MEET removebg.png" alt="Logo" class="logo">
+    
         
         <nav>
             <ul >
                 <li><a href="index.html">Home Page</a></li>
                 <li><a href="about-us.html">About Us</a></li>
-                <li><a href="room-booking.html">Book Room</a></li>
-                <li><a href="contact-us.html"> Contact Us</a></li>
+                <li><a href="room-booking.html">Room Booking</a></li>
                 <li><a href="book-shop.html"> Book Shop</a> </li>
-                <li><a href="collaboration.html"> collaboration</a> </li>
-                <li><a href="Questionnre.html"> Questionnre</a> </li>
+                <li><a href="collaboration.html"> Collaboration</a> </li>
+                <li><a href="questionnaire.html"> Questionnaire</a> </li>
                 <li><a href="tips.html"> Tips</a> </li>
+                <li><a href="contact-us.html"> Contact Us</a></li>
     
             </ul>
-            </nav>
-          <h1> contact us </h1>  
+        </nav>
       </header>
     <div> 
     
+    <h1 style="padding: 20px 0;"> contact us </h1>
     <h2>Contact Us Form</h2>
     <div>
         <form action="https://httpbin.org/get" method="POST">
@@ -45,7 +46,7 @@
     </div>
     <hr>
     <div style="text-align: center; background-color:rgb(212, 247, 212); padding: 20px 0;">
-        <h2>fill in our customer feedback form to improve our services!</h2>
+        <h2 style="background-color: rgb(212, 247, 212);">fill in our customer feedback form to improve our services!</h2>
         <a href="Questionnre.html">
             <button>Feedback form</button>
         </a>
@@ -53,7 +54,7 @@
     </div>
     <hr>
     <div style="text-align: center; background-color: powderblue; padding: 15px 0;">
-        <h2>Contact Information</h2>
+        <h2 style="background-color: powderblue;">Contact Information</h2>
         <p><strong>📞 Phone:</strong> 8765321</p>
         <p><strong>📧 Email:</strong> SmartMeet@gmail.com</p>
         <p><strong>📍 Location:</strong> Sultan Qaboos University</p>
@@ -69,30 +70,30 @@
             var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
         }
     </script>
-    <h2 style="text-align: center;">Feel free to reach out for inquiries. We’re here to help!</h2>
+    <h2 style="text-align: center; background-color: aliceblue;">Feel free to reach out for inquiries. We’re here to help!</h2>
 
-    <div class= "socialIcon">
-                <a herf=""><i class="fa-brands fa-facebook"></i></a>
-                <a herf=""><i class="fa-brands fa-instagram"></i></a>
-                           <a herf=""><i class="fa-brands fa-twitter"></i></a>
-                           <a herf=""><i class="fa-brands fa-youtube"></i></a>
-                           <a herf=""><i class="fa-brands fa-google-plus"></i></a>  
+    <footer>
+        <div class="footerContainer">
+            <div class="socialIcons">
+                <a href="https://www.instagram.com/youthcenter_om/?theme=dark"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://x.com/youthcenter_om?lang=en"><i class="fa-brands fa-twitter"></i></a>
             </div>
-                <div class="footerNav"> 
-                    <ul>
-                        <li><a herf="index.html">Home</a></li>
-                         <li><a herf="about-us.html">About Us</a></li>
-                         <li><a herf="contact-us.html">Contact Us</a></li>
-                    </ul>
-                
-                </div>
-                <div class="footerBottom">
-                     <p>&copy; 2025 SmartMeet | All Rights Reserved</p>
+            <div class="footerNav">
+                <ul><li><a href="index.html">Home</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="contact-us.html">Contact Us</a></li>
                     
-                </div>
+                </ul>
+            </div>
             
+        </div>
+        <div class="footerBottom">
+            <p>You can reach us at: <a href="mailto:SmartMeet@gmail.com">SmartMeet@gmail.com</a></p>
+        </br>
+            <p>&copy; 2025 SmartMeet. All Rights Reserved. </p>
             
-            </div> 
+        </div>
+    
+</footer>
 </body>
 </html>
-
