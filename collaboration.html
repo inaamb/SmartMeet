@@ -1,4 +1,4 @@
-<html>
+<xhtml>
     <head>
         <title>collaboration</title>
         <style>
@@ -93,7 +93,7 @@
             <h3> want to book a room directly ?<a href="room-booking.html#book">click here!</a></h2>
                 <br>
             <h1>Registeration form</h1>
-            <form action="https://httpbin.org/get" method="POST">
+            <form action="https://httpbin.org/get" method="get">
                 <label>Full Name:</label><br>
                 <input type="text"  name="fullname" required><br><br>
         
@@ -110,7 +110,7 @@
                 <textarea name="desc" rows="6" cols="50" required></textarea><br><br>
         
                 <label>Required room:</label><br>
-                <input type="radio" name="reqroom" value="Meeting"> Meeting room
+                <input type="radio" name="reqroom" value="Meeting" checked="checked"> Meeting room
                 <input type="radio" name="reqroom" value="podcast"> Podcast studio
                 <input type="radio" name="reqroom" value="cinema"> cinema 
                 <br><br>
@@ -126,11 +126,11 @@
                 <br><br>
            
                 <label> Preferred Date :</label><br>
-                <input type="date" name="date"> 
+                <input type="date" name="date" required> 
                 <br><br>
 
                 <label> is Catering required ?</label>
-                <select name="catering" size="1">
+                <select name="catering" size="1" required>
                     <option> Yes </option>
                     <option> No </option>
                 </select>
@@ -164,4 +164,4 @@
             
         </footer>
     </body>
-</html>
+</xhtml>
