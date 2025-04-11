@@ -17,27 +17,60 @@ header h1 {
 h2 { 
     background-color: #6baed8;
     padding: 15px 0;
+    color:#042f6d;
 }
 h4 {padding: 20px 0;}
 
 ul {
     list-style-type: square;
 }
+span{
+    font-weight: bold;
+}
 
+p.aboutus{
+    font-weight: bold;
+    font-size: 150%;
+    background-color:#6baed8;
+    color:#091a24
+}
 .rooms td{
     font-weight: bold;
     text-align: center;
     /*border: 2px solid black;*/
       
 }
-
 .rooms img {
     display: block;
-    width: 50%;
+    width: 400px;
     height: 200px;
-    padding: 50px;
-    margin: 0 auto 10px;
+    padding: 10px;
+    margin: 10px auto 10px;
 }
+
+h3.formheaders{
+    color:#042f6d;
+    background-color: lightblue;
+    font-size: 150%;
+}
+
+h4{
+    background-color: #bdd7e7;
+    font-size: 150%;
+    font-weight: normal;
+    
+}
+
+ul.aboutus{
+    list-style-type: square;
+}
+
+label{
+    font-size: 150%;
+    color: #091a24;
+    
+}
+
 
 table h2 {
     background-color: aliceblue;
