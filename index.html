@@ -45,9 +45,8 @@
 
     <div class="container text-center py-5">
       <div class="mb-5">
-        <h3>How Smart Meet Booking Works?</h3>
-        <section class="my-2">
-            <h2 class="bg-info p-3">Explore Our Rooms</h2>
+        <section>
+            <h2>Explore Our Rooms</h2>
             <div class="row justify-content-center">
                 <div class="col-md-6">
                     <img src="podcast.jpg" alt="Room Photo" id="room-photo" class="img-fluid my-3 rounded shadow">
@@ -61,15 +60,15 @@
         </section>
         
         <script>
-            const roomPhotos = ["podcast.jpg", "cinema.jpg", "meeting.webp"];
-            let photoIndex = 0;
+            const roomPhotos = ["podcast.jpg", "cinema.jpg", "meeting.webp"]; // have the room filenames as array
+            let photoIndex = 0; //start from first one
         
-            function rotateRoomPhotos() {
-                photoIndex = (photoIndex + 1) % roomPhotos.length;
-                document.getElementById("room-photo").src = roomPhotos[photoIndex];
+            function rotateRoomPhotos() { //function to change the display photo
+                photoIndex = (photoIndex + 1) % roomPhotos.length; //change index to next photo, loops back to 0 when done
+                document.getElementById("room-photo").src = roomPhotos[photoIndex]; //updata src with the next photo filename
             }
         
-            setInterval(rotateRoomPhotos, 3000);
+            setInterval(rotateRoomPhotos, 3000); //time before image changes is 3s
         </script>
         
         <p class="mt-2" >Get your Perfect Space in few minutes. <a href="room-booking.html" class="btn btn-warning btn-sm">BOOK NOW!</a></p>
