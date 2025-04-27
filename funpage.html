@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Funpage with Win Popup</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .card-container { display: flex; flex-wrap: wrap; justify-content: center; margin-top: 10px; gap: 5px; }
+    .card-box, .card-drop-zone {
+      text-align: center;
+      padding: 10px;
+      border: 2px dashed #ccc;
+      border-radius: 10px;
+      width: 200px;
+      background-color: rgb(236, 234, 234);
+      cursor: grab;
+    }
+    .correctDrop { background-color: rgb(217, 241, 217); border-color: green; }
+    .wrongDrop { background-color: rgb(252, 213, 213); border-color: red; }
+  </style>
+</head>
+<body>
+<div class="container text-center">
+  <h1 class="my-4">Fun game: Match the purpose to the room :]</h1>
+  <p>Drag each purpose to its correct room:</p>
+
+  <div class="row">
+    <div class="col-md-6">
+      <h3>Purposes</h3>
+      <div class="card-container" id="purposes">
+        <div class="card-box" draggable="true" data-room="MeetingRoom">Conduct a business meeting</div>
+        <div class="card-box" draggable="true" data-room="Cinema">Host a movie night</div>
+        <div class="card-box" draggable="true" data-room="PodcastStudio">Record a podcast episode</div>
+        <div class="card-box" draggable="true" data-room="MeetingRoom">Have a study session</div>
+        <div class="card-box" draggable="true" data-room="MeetingRoom">Interview potential employees</div>
+        <div class="card-box" draggable="true" data-room="Cinema">Watch a live football match</div>
+        <div class="card-box" draggable="true" data-room="PodcastStudio">Practice voiceovers</div>
+        <div class="card-box" draggable="true" data-room="MeetingRoom">Team brainstorming session</div>
+        <div class="card-box" draggable="true" data-room="Cinema">Present a short documentary</div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <h3>Rooms</h3>
+      <div class="card-container">
+        <div class="card-drop-zone" data-room="MeetingRoom">Meeting room</div>
+        <div class="card-drop-zone" data-room="PodcastStudio">Podcast studio</div>
+        <div class="card-drop-zone" data-room="Cinema">Cinema</div>
+      </div>
+    </div>
+  </div>
+
+<script>
+let draggedItem = null; //variable to save dragged cards - start as empty
+
+function winCheck() { // to check if all correct
+  let remainingCards = document.querySelectorAll('.card-box'); //select all cards still available
+  if (remainingCards.length === 0) { //if no cards left = all cards dropped correctly
+    setTimeout(() => { // delay time for a win alert
+      alert('🎉 Yaaayyy ! you WON, All purposes are correctly matched! 🎉'); //win alert
+    }, 200); // time is 0.2 second
+  }
+}
+
+let cards = document.querySelectorAll('.card-box'); // select all draggable cards
+for (let i = 0; i < cards.length; i++) {
+  cards[i].addEventListener('dragstart', function(e) {  // use the dragstart from the the drag and drop api
+    draggedItem = cards[i]; //add the dragged card to draggedItem
+  });
+}
+
+let dropZones = document.querySelectorAll('.card-drop-zone'); // select all drop zones available (spot to drop)
+for (let j = 0; j < dropZones.length; j++) {
+  dropZones[j].addEventListener('dragover', function(e) { 
+    e.preventDefault(); // allow card to be dropped by preventing the default
+  });
+
+  dropZones[j].addEventListener('drop', function(e) { 
+    let expectedRoom = dropZones[j].dataset.room; // get expected room for the drop zone data
+    let trueRoom = draggedItem.dataset.room; // get the true room of the dragged card
+
+    if (expectedRoom == trueRoom) { //check it they are the same
+      dropZones[j].classList.add('correctDrop'); //add correct class for style
+      dropZones[j].innerHTML += '<div>' + draggedItem.innerHTML + '</div>'; //add it the drop zone
+      draggedItem.parentNode.removeChild(draggedItem); //remove it from cards
+      winCheck(); //check if all done
+    } else {
+      dropZones[j].classList.add('wrongDrop'); // if not correct add  wrong class for style
+    }
+
+    setTimeout(function() { //time for the wrong styling to be removed
+      dropZones[j].classList.remove('wrongDrop');
+    }, 2000); // 2 seconds
+  });
+}
+</script>
+
+</div>
+</body>
+</html>
