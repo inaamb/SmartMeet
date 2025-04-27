@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -45,7 +46,32 @@
     <div class="container text-center py-5">
       <div class="mb-5">
         <h3>How Smart Meet Booking Works?</h3>
-        <img src="easy.jpg" alt="Book" class="img-thumbnail mx-auto d-block" style="max-width: 200px;">
+        <section class="my-2">
+            <h2 class="bg-info p-3">Explore Our Rooms</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <img src="podcast.jpg" alt="Room Photo" id="room-photo" class="img-fluid my-3 rounded shadow">
+                </div>
+            </div>
+            <div class="my-3">
+                <a href="rooms.html">
+                    <button class="btn btn-primary btn-lg">Learn More!</button>
+                </a>
+            </div>
+        </section>
+        
+        <script>
+            const roomPhotos = ["podcast.jpg", "cinema.jpg", "meeting.webp"];
+            let photoIndex = 0;
+        
+            function rotateRoomPhotos() {
+                photoIndex = (photoIndex + 1) % roomPhotos.length;
+                document.getElementById("room-photo").src = roomPhotos[photoIndex];
+            }
+        
+            setInterval(rotateRoomPhotos, 3000);
+        </script>
+        
         <p class="mt-2" >Get your Perfect Space in few minutes. <a href="room-booking.html" class="btn btn-warning btn-sm">BOOK NOW!</a></p>
       </div>
     
@@ -98,7 +124,7 @@
     function updateBanner() {
       //get the date 
       const now = new Date();
-      //Get the year as a four digit number (yyyy)
+      //Get the year as a four digit number (yyyy)
       const year = now.getFullYear();
       //get the month +1 because monthe from (0-11) then convert it to string and it is 2 digits
       const month = (now.getMonth() + 1).toString().padStart(2, '0'); 
