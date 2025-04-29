@@ -199,9 +199,10 @@
               u.focus();
               return false;
            }
-           //checks if email exists since its optional, then checks if no @ at start or spaces, after one @ there should not be a space or another @,
-           //and should end with a dot then domain.
-           if(e.value && !e.value.match((/^[^\s@]+@[^\s@]+\.[^\s@]+$/))){
+           //before the @ only letters, numbers,full stop,underscore and dash allowed (* means zero or more)
+          //after @ only letters are allowed, so no numbers.
+          //2-8 lowercase letters after final dot in email.
+           if(e.value && !e.value.match((/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,8}$/))){ 
              alert("Invalid email");
               e.focus();
               return false;
