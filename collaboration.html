@@ -62,14 +62,16 @@
           </ul>
     </div>
     <h1 class="mb-3">Pricing:</h1>
+   <!---->
     <script>
+      //function to define room object with its data
     function Room(type, size, perHour, perDay) {
       this.type = type;
       this.size = size;
       this.perHour = perHour;
       this.perDay = perDay;
     }
-    let rooms = [
+    let rooms = [ // array to store rooms
   new Room("Meeting Room", "Small", "10 OMR", "100 OMR"),
   new Room("Meeting Room", "Medium", "35 OMR", "150 OMR"),
   new Room("Meeting Room", "Large", "60 OMR", "250 OMR"),
@@ -77,19 +79,20 @@
   new Room("Cinema", "Large", "40 OMR", "350 OMR")
   ];
   function displayRooms() {
-  let tableBody = document.getElementById("roomTableBody");
-  tableBody.innerHTML = "";
+  let tableBody = document.getElementById("roomTableBody"); //rows will be inserted in the roomtablebody element
+  tableBody.innerHTML = ""; //empty existing rows
 
-  rooms.forEach(room => {
-    let row = document.createElement("tr");
-
-    row.innerHTML = `
+  rooms.forEach(room => { // loop- for each room in the room array
+    let row = document.createElement("tr"); //make a new row element 
+    
+    //details of the row element
+    row.innerHTML = ` 
       <td>${room.type}</td>
       <td>${room.size}</td>
       <td>${room.perHour}</td>
       <td>${room.perDay}</td>
     `;
-
+    //append row to table
     tableBody.appendChild(row);
   });
 }
