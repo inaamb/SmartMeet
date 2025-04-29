@@ -1,0 +1,154 @@
+<html>
+    <head><title>Questionnaire</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>  
+        <!--for the social media logos-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"> 
+        
+    </head>
+    <body>
+        
+        <header>
+            <nav class="navbar navbar-expand-lg bg-light">
+                    <div class="container-fluid p-3">
+                        <a href="#" class="navbar-brand"><img src="smartmeet transparent bg.PNG" alt="Logo" width=auto height="110px"></a>
+
+                        <!--so that navbar adjusts as screen gets smaller-->
+                        <button
+                         type="button"
+                         data-bs-toggle="collapse"
+                         data-bs-target="#navbarCollapseContent"
+                         class="navbar-toggler"
+                         aria-controls="navbarCollapseContent"
+                         aria-expanded="false"
+                         aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                        </button>
+                        
+                        <!--id given so we can connect it with the button (so button knows what to show when collapsed)-->
+                        <div class="collapse navbar-collapse" id="navbarCollapseContent">
+                        <!--for hyperlinks, gaps between them, increased font size, and text color-->
+                        <ul class="navbar-nav  gap-3 fs-5  text-info">
+                            <li class="nav-item"><a class="nav-link text-info link-primary "  href="index.html">Home Page</a></li>
+                            <li class="nav-item"><a class="nav-link text-info link-primary"  href="about-us.html">About Us</a></li>
+                            <li class="nav-item"><a class="nav-link text-info link-primary"  href="room-booking.html">Room Booking</a></li>
+                            <li class="nav-item"><a class="nav-link text-info link-primary"  href="book-shop.html"> Book Shop</a> </li>
+                            <li class="nav-item"><a class="nav-link text-info link-primary"  href="calculate.html"> Calculate</a> </li>
+                            <li class="nav-item"><a class="nav-link text-info link-primary"  href="collaboration.html"> Collaboration</a> </li>
+                            <li class="nav-item"><a class="nav-link text-primary active"  href="questionnaire.html"> Questionnaire</a> </li>
+                            <li class="nav-item"><a class="nav-link text-info link-primary"  href="tips.html"> Tips</a> </li>
+                            <li class="nav-item"><a class="nav-link text-info link-primary"  href="contact-us.html"> Contact Us</a></li>
+                            <li class="nav-item"><a class="nav-link text-info link-primary"  href="funpage.html"> Fun </a></li>
+                
+                        </ul>
+                    </div>
+                    </div>
+            </nav>
+        </header>
+        <main>
+            <h1>Customer Feedback Survey</h1>
+            <h2>We greatly value your feedback! Please take a few minutes to complete this survey 
+                and help us improve our services and overall customer satisfaction. Thank you!</h2>
+            <br/>
+            <form action="https://httpbin.org/get" method="get">
+                <label>What is your email? (optional and in case of follow-ups)</label> <br/>
+                <input type="email" name="email"/> <br/><br/>
+
+                <label>How did you hear about our conference center?</label><br/>
+                <input type="radio" name="Where center was heard from" value="Website" required/> Website<br/>
+                <input type="radio" name="Where center was heard from" value="Social Media"/> Social Media<br/>
+                <input type="radio" name="Where center was heard from" value="Word of Mouth"/> Word of Mouth<br/>
+                <input type="radio" name="Where center was heard from" value="Other"/> Other:
+
+                <input type="text" name="other" />  <br/>
+
+                <br/><br/>
+                <label>How satisfied are you with the booking process?</label><br/>
+                <input type="radio" name="Booking satistfaction" value="1" required/> 1 (very dissatisfied)<br/>
+                <input type="radio" name="Booking satistfaction" value="2"/> 2<br/>
+                <input type="radio" name="Booking satistfaction" value="3"/> 3<br/>
+                <input type="radio" name="Booking satistfaction" value="4"/> 4<br/>
+                <input type="radio" name="Booking satistfaction" value="5"/> 5 (very satisfied)
+                <br/><br/>
+                
+                <label>How easy was it to navigate our website?</label><br/>
+                <input type="radio" name="ease of navigation" value="1" required/> 1 (hard to navigate)<br/>
+                <input type="radio" name="ease of navigation" value="2"/> 2<br/>
+                <input type="radio" name="ease of navigation" value="3"/> 3<br/>
+                <input type="radio" name="ease of navigation" value="4"/> 4<br/>
+                <input type="radio" name="ease of navigation" value="5"/> 5 (easy to navigate)
+                <br/><br/>
+
+                 <label>Which room did you book?</label> <br/>
+                <input type="radio" name="room type" value="Business Meeting Room" required/> Business Meeting Room <br/>
+                <input type="radio" name="room type" value="Teacher Room"/> Teacher Room <br/>
+               <input type="radio" name="room type" value="Podcast Room"/>  Podcast Room <br/>
+               <input type="radio" name="room type" value="Cinema-Style Room"/>  Cinema-Style Room <br/>
+               <input type="radio" name="room type" value="Conference Room (for collaborations)"/>  Conference Room (for collaborations)<br/>
+                <br/><br/>
+                
+                
+                <label>How was the cleanliness of the room?</label><br/>
+                <input type="radio" name="room cleanliness" value="1" required/> 1 (very dirty)<br/>
+                <input type="radio" name="room cleanliness" value="2"/> 2 <br/>
+                <input type="radio" name="room cleanliness" value="3"/> 3 <br/>
+                <input type="radio" name="room cleanliness" value="4"/> 4 <br/>
+                <input type="radio" name="room cleanliness" value="5"/> 5 (very clean)<br/>
+                <br/><br/>
+
+               <label>Did the room provided to you match what you wanted? Room style and size (number of seats)</label><br/>
+               <input type="radio" name="did room match style and size requirments?" value="Yes" required/> Yes<br/>
+               <input type="radio" name="did room match style and size requirments?" value="No"/> No <br/>
+                <br/><br/>
+
+                <label>Based on the previous question, if you answered with a no then provide your reasons down below: </label> <br/>
+                <textarea name="reasons for style and size dissatisfaction" cols="40" rows="5" ></textarea> <br/><br/>
+                
+                
+
+                <label>Were all the amenities you asked for provided as you wished?  </label> <br/>
+               <input type="radio" name="were the amenities provided?" value="Yes" required/> Yes<br/>
+               <input type="radio" name="were the amenities provided?" value="No"/> No <br/>
+                <br/><br/>
+
+                <label>Based on the previous question, if you answered with a no then provide your reasons down below: </label> <br/>
+                <textarea name="reasons for amenities dissatisfaction" cols="40" rows="5" ></textarea> <br/><br/>
+
+                <input type="submit" value="Submit"/>
+                <input type="reset" value="Clear choices"/>
+            </form>
+            
+            <br/><br/>
+                
+            
+        </main>
+        <!--footer-->
+        <footer class="bg-light py-5 mt-5 text-dark">
+            <div class="container text-center">
+                <!--for hyperlinks-->
+                <div>
+                    <ul class="nav justify-content-center mb-3">
+                        <li class="nav-item"><a class="nav-link text-info" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link text-info" href="about-us.html">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link text-info" href="contact-us.html">Contact Us</a></li>   
+                    </ul>
+                </div>
+                <!--for social media icons-->
+                <div class="justify-content-center mb-3">
+                    <a href="https://www.instagram.com/youthcenter_om/?theme=dark" class="text-info fs-2 me-3"><i class="bi bi-instagram"></i></a>
+                    <a href="https://x.com/youthcenter_om?lang=en" class="text-info fs-2 me-3"><i class="bi bi-twitter"></i></a>
+                </div>
+                
+                
+                <!--email and copyright-->
+                <div class="mb-3"> 
+                    <p class="text-info">You can reach us at: <a class="text-info"href="mailto:SmartMeet@gmail.com">SmartMeet@gmail.com</a></p>
+                </br>
+                    <p class="text-info">&copy; 2025 SmartMeet. All Rights Reserved. </p>
+                    
+                </div>
+            </div>
+        
+    </footer>
+    </body>
+</html>
