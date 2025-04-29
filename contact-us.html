@@ -90,10 +90,11 @@
         <div id="googleMap" class="mb-4" style="width:100%;height:400px;"></div>
         <script>
             function myMap() {
-                var mapProp = {
+                var mapProp = { // variable for map properties --> center coordinates and zoom level
                     center: new google.maps.LatLng(23.592058, 58.168346), 
-                    zoom: 15,
+                    zoom: 20,
                 };
+                // new map object to display in html with id=googleMap
                 var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
             }
         </script>
