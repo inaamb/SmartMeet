@@ -60,7 +60,8 @@
                     <div class="card-body mb-4 bg-white p-5">
                         <div class="mb-3 mt-3">
                             <label class="form-label">What is your name?</label>
-                            <input class="form-control" type="name" name="name"/> 
+                            <input class="form-control" type="text" name="name"/>
+                            <div class="text-danger"></div>
                             <div class="invalid-feedback">Please fill out this field.</div>
                         </div><!--end of div for email-->
                         <div class="mb-3 mt-3">
@@ -131,7 +132,8 @@
 
                         <div class="mb-3">
                             <label class="form-label">Based on the previous question, if you answered with a no then provide your reasons down below:</label> <br/>
-                            <textarea class="form control "name="reasons for style and size dissatisfaction" cols="40" rows="5" ></textarea>
+                            <textarea class="form-control" name="reasons for style and size dissatisfaction" cols="40" rows="5" ></textarea>
+                            <div class="text-danger"></div>
                             <div class="invalid-feedback">Please fill out this field.</div>
                         </div> 
 
@@ -188,33 +190,77 @@
         
     </footer>
     </body>
-    <script type="text/javascript">
-        function validateForm(){
-            var u=document.myForm.name;
-            var e=document.myForm.email;
-            var sat=document.myForm.bookingSatisfaction;
-            //name should be between 2-30 characters including spaces and be made up of only alphabets
-            if(u.value.search(/([A-Z]|[a-z]){2,30}/)==-1){
-              alert("Invalid user name");
-              u.focus();
-              return false;
-           }
-           //before the @ only letters, numbers,full stop,underscore and dash allowed (* means zero or more)
-          //after @ only letters are allowed, so no numbers.
-          //2-8 lowercase letters after final dot in email.
-           if(e.value && !e.value.match((/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,8}$/))){ 
-             alert("Invalid email");
-              e.focus();
-              return false;
-           }
-           //option 1 of the satifaction options is intentionally wrong to to test validation.
-           if(sat.selectedIndex < 1){
-             alert("Invalid choice");
-              sat.focus();
-              return false;
-           }
-           return true
-        }
+    <script>
+function validateForm() {
+    let form = document.forms["myForm"];
+    let valid = true;
 
-    </script>
+    document.querySelectorAll(".text-danger").forEach(el => el.textContent = "");
+
+    function showError(field, msg) {
+        let container = field.closest(".mb-3");
+        if (container) {
+            let error = container.querySelector(".text-danger");
+            if (!error) {
+                error = document.createElement("div");
+                error.className = "text-danger mt-1";
+                container.appendChild(error);
+            }
+            error.textContent = msg;
+        }
+        valid = false;
+    }
+
+    let name = form["name"];
+    if (!name.value.trim()) {
+        showError(name, "Name is required.");
+    } else if (!/^[A-Za-z\s]{2,30}$/.test(name.value)) {
+        showError(name, "Name must be 2–30 characters, letters only.");
+    }
+
+    let email = form["email"];
+    if (email.value && !/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/i.test(email.value)) {
+
+        showError(email, "Invalid email format.");
+    }
+
+    let bookingSatisfaction = form["bookingSatisfaction"];
+    if (!bookingSatisfaction.value) {
+        showError(bookingSatisfaction, "Please select your satisfaction level.");
+    }
+
+    const radioGroups = [
+        "Where center was heard from",
+        "ease of navigation",
+        "room type",
+        "room cleanliness",
+        "did room match style and size requirments?",
+        "were the amenities provided?"
+    ];
+
+    radioGroups.forEach(name => {
+        let checked = [...form.querySelectorAll(`input[name="${name}"]`)].some(input => input.checked);
+        if (!checked) {
+            let firstRadio = form.querySelector(`input[name="${name}"]`);
+            showError(firstRadio, "Please select an option.");
+        }
+    });
+
+    let roomMatch = form["did room match style and size requirments?"].value;
+    let reasonRoom = form["reasons for style and size dissatisfaction"];
+    if (roomMatch === "No" && reasonRoom.value.trim() === "") {
+        showError(reasonRoom, "Please explain why the room didn't match ?");
+    }
+
+    let amenityMatch = form["were the amenities provided?"].value;
+    let reasonAmenity = form["reasons for amenities dissatisfaction"];
+    if (amenityMatch === "No" && reasonAmenity.value.trim() === "") {
+        showError(reasonAmenity, "Please explain why ? ");
+    }
+
+    return valid;
+}
+</script>
+
+
 </html>
