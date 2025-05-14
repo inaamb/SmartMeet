@@ -2,10 +2,11 @@
 $conn = new mysqli("localhost", "root", "", "rooms");
 if ($conn->connect_error) die("Connection failed: " . $conn->connect_error);
 
-$type = $_POST['type'];
-$size = $_POST['size'];
-$per_hour = $_POST['per_hour'];
-$per_day = $_POST['per_day'];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $type = $_POST["type"];
+    $size = $_POST["size"];
+    $per_hour = $_POST["per_hour"];
+    $per_day = $_POST["per_day"];
 
 $sql = "INSERT INTO Room (type, size, per_hour, per_day) VALUES (?, ?, ?, ?)";
 $stmt = $conn->prepare($sql);
@@ -19,4 +20,5 @@ echo "<h2>Room Added</h2>
 </table>";
 
 $conn->close();
+}
 ?>
