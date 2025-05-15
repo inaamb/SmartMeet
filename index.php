@@ -1,0 +1,202 @@
+<?php
+// Feature class
+class Feature {
+    public $imageSrc;
+    public $featureName;
+    public $description;
+
+    public function __construct($imageSrc, $featureName, $description) {
+        $this->imageSrc = $imageSrc;
+        $this->featureName = $featureName;
+        $this->description = $description;
+    }
+}
+
+// Connect to database
+$conn = new mysqli("localhost", "root", "", "smart_meet");
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Fetch from database
+$sql = "SELECT image_src, feature_name, description FROM features";
+$result = $conn->query($sql);
+
+// Create array of Feature objects
+$features = [];
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $features[] = new Feature($row['image_src'], $row['feature_name'], $row['description']);
+    }
+}
+$conn->close();
+?>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Smart Meet</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"> 
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid p-3">
+        <a href="#" class="navbar-brand"><img src="smartmeet transparent bg.PNG" alt="Logo" height="110px"></a>
+        <button type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapseContent"
+          class="navbar-toggler" aria-controls="navbarCollapseContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapseContent">
+          <ul class="navbar-nav gap-3 fs-5 text-info ms-auto">
+            <li class="nav-item"><a class="nav-link text-primary active" href="index.php">Home Page</a></li>
+            <li class="nav-item"><a class="nav-link text-info" href="about-us.php">About Us</a></li>
+            <li class="nav-item"><a class="nav-link text-info" href="room-booking.php">Room Booking</a></li>
+            <li class="nav-item"><a class="nav-link text-info" href="book-shop.php">Book Shop</a></li>
+            <li class="nav-item"><a class="nav-link text-info" href="calculate.php">Calculate</a></li>
+            <li class="nav-item"><a class="nav-link text-info" href="collaboration.php">Collaboration</a></li>
+            <li class="nav-item"><a class="nav-link text-info" href="questionnaire.php">Questionnaire</a></li>
+            <li class="nav-item"><a class="nav-link text-info" href="tips.php">Tips</a></li>
+            <li class="nav-item"><a class="nav-link text-info" href="contact-us.php">Contact Us</a></li>
+            <li class="nav-item"><a class="nav-link text-info" href="funpage.php">Fun</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container text-center py-5">
+    <h1 class="text-center text-primary fw-bold my-4">Transform Your Meetings into Smart & Efficient Experiences.</h1>
+    <h2 class="text-primary my-4">Why Choose Smart Meet?</h2>
+
+    <table class="table table-bordered text-center table-hover table-primary">
+      <thead class="table-secondary">
+        <tr>
+          <th>Image</th>
+          <th>Feature</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+<tbody>
+  <?php if (!empty($features)): ?>
+    <?php foreach ($features as $feature): ?>
+      <tr>
+        <td><img src="<?= $feature->imageSrc ?>" alt="<?= $feature->featureName ?>" width="70"></td>
+        <td><?= $feature->featureName ?></td>
+        <td><?= $feature->description ?></td>
+      </tr>
+    <?php endforeach; ?>
+  <?php else: ?>
+    <tr><td colspan="3">No features found.</td></tr>
+  <?php endif; ?>
+</tbody>
+
+    </table>
+
+    
+
+    <div class="mb-5">
+      <h2>Explore Our Rooms</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <img src="podcast.jpg" alt="Room Photo" id="room-photo" class="img-fluid my-3 rounded shadow">
+        </div>
+      </div>
+      <div class="my-3">
+        <a href="room-booking.php"><button class="btn btn-primary btn-lg">Learn More!</button></a>
+      </div>
+    </div>
+
+    <script>
+      const roomPhotos = ["podcast.jpg", "cinema.jpg", "meeting.webp"];
+      let photoIndex = 0;
+      function rotateRoomPhotos() {
+        photoIndex = (photoIndex + 1) % roomPhotos.length;
+        document.getElementById("room-photo").src = roomPhotos[photoIndex];
+      }
+      setInterval(rotateRoomPhotos, 3000);
+    </script>
+    
+<div class="container text-center py-5">
+    <div class="mb-5">
+       <p class="mt-2" >Get your Perfect Space in few minutes. <a href="room-booking.php" class="btn btn-warning btn-sm">BOOK NOW!</a></p>
+    </div>
+    <div class="mb-5">
+        <h3>Set Up Your Preferences</h3>
+        <img src="set.jpg" alt="Preferences" class="img-thumbnail mx-auto d-block" style="max-width: 200px;">
+        <p class="mt-2" >Customize your meeting settings. <a href="collaboration.php" class="btn btn-info btn-sm">COLLABE WITH US NOW!</a></p>
+      </div>
+    
+      <div class="mb-5">
+        <h3>Book Shop</h3>
+        <img src="bookshop.jpg" alt="Book Shop" class="img-thumbnail mx-auto d-block" style="max-width: 200px;">
+        <p class="mt-2 ">Buy Limited Edition Books. <a href="book-shop.php" class="btn btn-warning btn-sm">SHOP NOW!</a></p>
+      </div>
+    
+      <div class="mb-5">
+        <h3>Share Your Experience</h3>
+        <img src="feedback.png" alt="Feedback" class="img-thumbnail mx-auto d-block" style="max-width: 200px;">
+        <p><a href="questionnaire.php" class="btn btn-info btn-sm">GIVE YOUR FEEDBACK NOW!</a></p>
+      </div>
+    
+      <div class="mb-5">
+        <h3>Helpful Tips</h3>
+        <img src="tips.jpg" alt="Tips" class="img-thumbnail mx-auto d-block" style="max-width: 200px;">
+        <p>Public Speaking & Study Tips. <a href="tips.php" class="btn btn-warning btn-sm">Important Tips!</a></p>
+      </div>
+      <div class="mb-5">
+        <h3>Calculate</h3>
+        <img src="calculate.jpg" alt="cart" class="img-thumbnail mx-auto d-block" style="max-width: 200px;">
+        <p>Calculate your book bill <a href="calculate.php" class="btn btn-info btn-sm">Book shop Cart</a></p>
+      </div>
+      <div class="mb-5">
+        <h3>Fun Page</h3>
+        <img src="funpage.png" alt="fun Page" class="img-thumbnail mx-auto d-block" style="max-width: 200px;">
+        <p>Join fun Page! <a href="funpage.php" class="btn btn-warning btn-sm">Fun Page!</a></p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="fixed-bottom bg-primary text-light py-2">
+    <marquee behavior="scroll" direction="left" id="bannerText"></marquee>
+  </div>
+  <script>
+    const banner = document.getElementById("bannerText");
+    function updateBanner() {
+      const now = new Date();
+      const year = now.getFullYear();
+      const month = (now.getMonth() + 1).toString().padStart(2, '0');
+      const day = now.getDate().toString().padStart(2, '0');
+      const hours = now.getHours().toString().padStart(2, '0');
+      const minutes = now.getMinutes().toString().padStart(2, '0');
+      const date = `${day}-${month}-${year}`;
+      const time = `${hours}:${minutes}`;
+      banner.textContent = `Welcome to Smart Meet website! Today is ${date}, and the time is ${time}`;
+    }
+    updateBanner();
+    setInterval(updateBanner, 60000);
+  </script>
+
+  <footer class="bg-light py-5 mt-5 text-dark">
+    <div class="container text-center">
+      <ul class="nav justify-content-center mb-3">
+        <li class="nav-item"><a class="nav-link text-info" href="index.php">Home</a></li>
+        <li class="nav-item"><a class="nav-link text-info" href="about-us.php">About Us</a></li>
+        <li class="nav-item"><a class="nav-link text-info" href="contact-us.php">Contact Us</a></li>
+      </ul>
+      <div class="justify-content-center mb-3">
+        <a href="https://www.instagram.com/youthcenter_om/?theme=dark" class="text-info fs-2 me-3"><i class="bi bi-instagram"></i></a>
+        <a href="https://x.com/youthcenter_om?lang=en" class="text-info fs-2 me-3"><i class="bi bi-twitter"></i></a>
+      </div>
+      <div class="mb-3"> 
+        <p class="text-info">You can reach us at: <a class="text-info" href="mailto:SmartMeet@gmail.com">SmartMeet@gmail.com</a></p>
+        <p class="text-info">&copy; 2025 SmartMeet. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
