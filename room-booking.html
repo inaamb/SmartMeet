@@ -118,7 +118,7 @@
                     </div>
             
             
-            <form action="https://httpbin.org/get" method="get" class="was-validated" >
+            <form action="room-booking-form.php" id="myForm" method="get" class="was-validated" onsubmit="return validateForm()">
                 <input type="hidden" name="center location" value="Muscat"/> 
                 <div class="card mb-4 bg-light">
                     <div class="card-header bg-info text-white">
@@ -189,6 +189,7 @@
                             <input type="checkbox" name="addtional equipment" value="Whiteboard & Markers"/> Whiteboard & Markers
                             <input type="checkbox" name="addtional equipment" value="Microphone & Speakers"/>  Microphone & Speakers
                             <input type="checkbox" name="addtional equipment" value="Video Recording Equipment"/>  Video Recording Equipment
+                            <input type="checkbox" name="addtional equipment" value="None"/>  None of the above
                             <div class="invalid-feedback">Please fill out this field.</div>
                         </div><!--end of div for additional equipment-->
                         <div class="mb-3">
@@ -246,6 +247,117 @@
     </body>
     <script type="text/javascript">
         //constructor for room objects
+        function validateForm(){
+            let form = document.forms["myForm"];
+            let isValid=true;
+
+            document.querySelectorAll(".text-danger").forEach(el => el.textContent = "");
+
+            function showError(field, msg) {
+            let container = field.closest(".mb-3");
+            if (container) {
+                let error = container.querySelector(".text-danger");
+                if (!error) {
+                    error = document.createElement("div");
+                    error.className = "text-danger mt-1";
+                    container.appendChild(error);
+                }
+                error.textContent = msg;
+            }
+            isvalid = false;
+        }
+
+            const name = form["name"];
+            const email = form["email"];
+            const phone = form["number"];
+
+            //name validation
+            if (!name.value) {
+                showError(name, "Full name is required");
+                isValid = false;
+            } else if (!/^[A-Za-z\s]{2,30}$/.test(name.value)) {
+                showError(name, "Name must be 2–30 characters, letters only.");
+                isValid = false;
+            }
+
+            //email validation
+            if (!email.value) {
+                showError(email, "Email is required");
+                isValid = false;
+            } else if (!/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,8}$/.test(email.value)){
+                showError(email, "Please enter a valid email address");
+                isValid = false;
+            }
+
+            //phone number validation
+            if (phone === "") {
+            showError(form["number"], "Phone number is required");
+            isValid = false;
+            } else if (!/^\d+$/.test(phone.value)) {
+                showError(phone, "Phone number must contain only digits");
+                isValid = false;
+            } else if (phone.length < 8) {
+                showError(phone, "Phone number must be at least 8 digits");
+                isValid = false;
+            }
+
+            const roomType = document.getElementsByName("room type");
+            const seats = form["number of seats"];
+            const date = form["date"];
+            const time = form["time"];
+
+            
+            let roomTypeSelected = false;
+            for (let i = 0; i < roomType.length; i++) {
+                if (roomType[i].checked) {
+                    roomTypeSelected = true;
+                    break;
+                }
+            }
+
+             if (!roomTypeSelected) {
+            showError(roomType[0], "Please select a room type");
+            isValid = false;
+            }
+
+            if (!seats.value) {
+            showError(seats, "Number of seats is required");
+            isValid = false;
+            }
+
+            if (!date.value) {
+            showError(date, "Please select a date");
+            isValid = false;
+
+            }
+
+            if (!time.value) {
+            showError(time, "Please select a time");
+            isValid = false;
+            }
+
+
+            const catering = document.getElementsByName("catering");
+
+            let cateringSelected = false;
+            for (let i = 0; i < catering.length; i++) {
+                if (catering[i].checked) {
+                    cateringSelected = true;
+                    break;
+                }
+            }
+            if (!cateringSelected) {
+                showError(catering[0], "Please select catering option");
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+
+
+
+
         function Room(name, description) {
             this.name = name;
             this.description = description;
