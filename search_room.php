@@ -8,9 +8,8 @@ $results = [];
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["search"])) {
     $search_term = $_POST["search_term"];
     
-    $sql = "SELECT * FROM Room WHERE 
-            type LIKE ? OR 
-            size LIKE ?";
+    $sql = "SELECT * FROM Room WHERE type LIKE '%$search%' OR size LIKE '%$search%'";
+
     
     $stmt = $conn->prepare($sql);
     $search_param = "%$search_term%";
