@@ -99,7 +99,9 @@
                     <thead>
                              <tr>
                              <th>Room Name</th> 
-                             <th>Room description</th></tr>
+                             <th>Room description</th>
+                            <th>Room price</th>
+                        <th>Room price increment</th></tr>
                     </thead>
                    <tbody id="searchTableBody">
                    <!--this is where the javascipt code will work-->
@@ -358,28 +360,30 @@
 
 
 
-        function Room(name, description) {
+        function Room(name, description,price,increment) {
             this.name = name;
             this.description = description;
+            this.price=price;
+            this.increment=increment;
         }
 
         //initialize the rooms array with the rooms that the site provides.
         const rooms = [
             new Room(
                 "Business Meeting room", 
-                "Room where you can have meetings with business partners, colleagues, etc. 5 OMR/hour, +2 for every size increase."
+                "Room where you can have meetings with business partners, colleagues, etc. 5 OMR/hour, +2 for every size increase.",5.00,2.00
             ),
             new Room(
                 "Podcast room", 
-                "Soundproofed room to record podcasts or songs. 10 OMR/hour, +4 for every size increase"
+                "Soundproofed room to record podcasts or songs. 10 OMR/hour, +4 for every size increase",10.00,4.00
             ),
             new Room(
                 "Teaching room", 
-                "Room specially made to teach a class of students. 4 OMR/hour, +2 for every size increase."
+                "Room specially made to teach a class of students. 4 OMR/hour, +2 for every size increase.",4.00,2.00
             ),
             new Room(
                 "Cinema Style room", 
-                "Room to enjoy educational videos on a big screen. 8 OMR/hour, +3 for every size increase."
+                "Room to enjoy educational videos on a big screen. 8 OMR/hour, +3 for every size increase.",8.00,3.00
             )
         ];
 
@@ -395,6 +399,8 @@
                 row.innerHTML = `
                 <td>${room.name}</td>
                 <td>${room.description}</td>
+                <td>${room.price}</td>
+                <td>${room.increment}</td>
                 `;
                 
                 //add the whole row to the body of the table
