@@ -1,17 +1,14 @@
 <?php
-// Database connection
+//Database connection
 $conn = new mysqli("localhost", "root", "", "rooms");
 if ($conn->connect_error) die("Connection failed: ". $conn->connect_error);
 
-// Search functionality
 $results = [];
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["search"])) {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $search_term = $_POST["search_term"];
     
-    $sql = "SELECT * FROM Room WHERE type LIKE '%$search%' OR size LIKE '%$search%'";
-
     
-    $stmt = $conn->prepare($sql);
+    $stmt = $conn->prepare("SELECT * FROM Room WHERE type LIKE ? OR size LIKE ?");
     $search_param = "%$search_term%";
     $stmt->bind_param("ss", $search_param, $search_param);
     $stmt->execute();
@@ -23,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["search"])) {
     $stmt->close();
 }
 
-// HTML output
+
 echo '<!DOCTYPE html>
 <html>
 <head>
