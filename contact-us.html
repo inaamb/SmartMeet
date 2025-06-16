@@ -8,7 +8,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">   
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />    
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2TNJtJokfP4DfZuwVhlHCMHjCVuxG2KY&callback=myMap" async defer></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 </head>
 <body>
@@ -87,18 +86,6 @@
             <p><strong>📧 Email:</strong> SmartMeet@gmail.com</p>
             <p><strong>📍 Location:</strong> Sultan Qaboos University</p>
         </div>
-
-        <div id="googleMap" class="mb-4" style="width:100%;height:400px;"></div>
-        <script>
-            function myMap() {
-                var mapProp = { // variable for map properties --> center coordinates and zoom level
-                    center: new google.maps.LatLng(23.592058, 58.168346), 
-                    zoom: 20,
-                };
-                // new map object to display in html with id=googleMap
-                var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
-            }
-        </script>
 
         <h2 class="text-center bg-light p-3 rounded">Feel free to reach out for inquiries. We’re here to help!</h2>
     </main>
